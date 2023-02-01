@@ -66,7 +66,7 @@ Ainsi, on isole la logique du métier des dépendances aux différents framework
 
 
 ___
-## Specification [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) du kata
+## Specification [RFC2119](https://microformats.org/wiki/rfc-2119-fr) du kata
 
 **1. Implémentation de la logique métier d’un compte bancaire, de manière isolée et protégée** 
 
@@ -93,7 +93,7 @@ ___
 
 
 
-L’architecture hexagonale, contrairement à l’architecture MVC, impose de développer & valider le domaine métier avant de travailler toute autre brique logicielle. Votre historique de commit DEVRAIT refléter cet ordre. Ce domaine `DOIT` être validé par des tests unitaires _(exemple Java : Junit5 + @parameterizedTest)_. Pour l’implémentation des tests, le candidat `PEUT` utiliser une approche [TDD](https://fr.wikipedia.org/wiki/Test_driven_development). 
+L’architecture hexagonale, contrairement à l’architecture MVC, impose de développer & valider le domaine métier avant de travailler toute autre brique logicielle. Votre historique de commit `DEVRAIT` refléter cet ordre. Ce domaine `DOIT` être validé par des tests unitaires _(exemple Java : Junit5 + @parameterizedTest)_. Pour l’implémentation des tests, le candidat `PEUT` utiliser une approche [TDD](https://fr.wikipedia.org/wiki/Test_driven_development). 
 
  
 
