@@ -54,17 +54,17 @@ ___
 ## Objectif & contexte: mise en place d'un projet en architecture héxagonale.
 
 
-```
 
-Dans certains pans de l’industrie, la logique métier n’a pas le droit à l’erreur. Ex : Secteur bancaire. Dans ces cas, le code responsable du métier doit être aussi isolé que possible, afin d’être protégé de la lourdeur des dépendances aux frameworks externes. 
 
-C’est la promesse de l’architecture hexagonale. On définit dès le début la logique métier stricte de notre application, et tout composant externe (ex : Base de données, Controler API, CLI, …) est référencé au travers de l’abstraction d’une interface. 
+Dans certains pans de l’industrie, **la logique métier n’a pas le droit à l’erreur**. Ex : Secteur bancaire. Dans ces cas, le code responsable du métier doit être aussi isolé que possible, afin d’être **protégé** de la lourdeur des dépendances aux frameworks externes. 
+
+C’est la promesse de l’[architecture hexagonale](https://fr.wikipedia.org/wiki/Architecture_hexagonale). On définit dès le début la logique métier stricte de notre application, et tout composant externe (ex : Base de données, Controler API, CLI, …) est référencé **au travers de l’abstraction d’une interface**. 
 
 Par exemple, on ne se souciera pas de savoir si notre base de données est Postgresql ou SQLite. Notre code métier interagit avec une interface « RelationalDatabase », et le choix d’une solution de base de données plutôt qu’une autre intervient aussi tard que possible dans le processus de développement. Comme dans une équation mathématique, où on remplace les x et les y au dernier moment. 
 
-Ainsi, on isole la logique du métier des dépendances aux différents frameworks qui composent le software. La logique métier peut donc être modifiée, testée, validée indépendamment. 
+Ainsi, on isole la logique du métier des dépendances aux différents frameworks qui composent le software. **La logique métier peut donc être modifiée, testée, validée indépendamment.**
 
-```
+
 ___
 ## Specification [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) du kata
 
