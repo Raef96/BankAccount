@@ -10,14 +10,13 @@ Ce kata est un challenge d'[architecture hexagonale](https://fr.wikipedia.org/wi
 Implémentation de la logique métier d'un compte en banque:
 
 ```
-Penser aux fonctionnalités que vous attendez d'un compte an banque.
+Fonctionnalités attedues:
 
 1. Dépot d'argent
 2. Retrait d'argent
 3. Consulter le solde actuel
 4. Consulter les transactions précédentes
 
-...
 ```
 
 Proposer une modélisation objet adaptée des entités necéssaires à ces fonctionnalités.
