@@ -10,7 +10,7 @@ Ce kata est un challenge d'[architecture hexagonale](https://fr.wikipedia.org/wi
 Implémentation de la logique métier d'un compte en banque:
 
 ```
-Fonctionnalités attedues:
+Fonctionnalités attendues:
 
 1. Dépot d'argent
 2. Retrait d'argent
