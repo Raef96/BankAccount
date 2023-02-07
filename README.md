@@ -30,27 +30,23 @@ Exposition des différentes fonctionnalités sur une API REST(Spring par ex.)
 
 Implémentation d'un adapteur de persistence de votre choix (SQLlite, H2, ...).
 
+
+## ⚠️ MVP ⚠️
+
+>Le kata a volontairement un scope très large : il a vocation à être affiné tout au long de votre montée en compétence chez Exalt. Pour une candidature cependant, concentrez-vous sur **l’implémentation d’un domaine métier complet**, testé, et accessible depuis **une API Rest** ou à minima une CLI. 
+
 ## Bonne chance !
 
 
 ![archi-hexa](./assets/hexa-schema.png)
 
 
-# Note d'intention
-
-
-
-
-## ⚠️ MVP ⚠️
-
->Le kata a volontairement un scope très large : il a vocation à être affiné tout au long de votre montée en compétence chez Exalt. Pour une candidature cependant, concentrez-vous sur **l’implémentation d’un domaine métier complet**, testé, et accessible depuis **une API Rest** ou à minima une CLI. 
 
 ___
 
 
 
-
-## Objectif & contexte: mise en place d'un projet en architecture héxagonale.
+# Objectif & contexte: mise en place d'un projet en architecture héxagonale.
 
 
 
@@ -64,8 +60,7 @@ Par exemple, on ne se souciera pas de savoir si notre base de données est Postg
 Ainsi, on isole la logique du métier des dépendances aux différents frameworks qui composent le software. **La logique métier peut donc être modifiée, testée, validée indépendamment.**
 
 
-___
-## Specification [RFC2119](https://microformats.org/wiki/rfc-2119-fr) du kata
+# Specification [RFC2119](https://microformats.org/wiki/rfc-2119-fr) du kata
 
 **1. Implémentation de la logique métier d’un compte bancaire, de manière isolée et protégée** 
 
