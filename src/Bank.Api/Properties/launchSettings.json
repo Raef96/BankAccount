@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:18186",
+      "applicationUrl": "http://localhost:38244",
       "sslPort": 0
     }
   },
   "profiles": {
-    "Bank.App": {
+    "Bank.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5268",
+      "applicationUrl": "http://localhost:5081",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
