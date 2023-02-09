@@ -1,9 +1,10 @@
 ﻿using Bank.Domain.Entities;
 
-namespace Bank.App.Interfaces.Repositories;
+namespace Bank.App.Interfaces.Services;
 
-public interface ICardRepository
+public interface ICardService
 {
     Card? GetCardByNumber(string cardNumber);
+
     Card? GetCardById(Guid id);
 }
