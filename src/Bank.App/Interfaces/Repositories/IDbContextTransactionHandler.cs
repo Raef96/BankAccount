@@ -1,6 +1,6 @@
 ﻿namespace Bank.App.Interfaces.Repositories;
 
-internal interface IDbContextTransactionHandler<TDbContext>
+public interface IDbContextTransactionHandler<TDbContext>
 {
     bool BeginTransaction();
     void CommitTransaction();

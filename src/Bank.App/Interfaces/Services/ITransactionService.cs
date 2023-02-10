@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bank.Domain.Dtos;
+using Bank.App.Interfaces.Services.Base;
 
 namespace Bank.App.Interfaces.Services;
 
-public interface ITransactionService
+public interface ITransactionService : IService<TransactionDto>
 {
-    bool AddTransaction(Transaction transaction);
-    List<Transaction> GetTransactionsByCardId(Guid cardId);
+
 }

@@ -1,9 +1,11 @@
-﻿using Bank.Domain.Entities;
+﻿using Bank.Domain.Dtos;
+using Bank.App.Interfaces.Services.Base;
 
 namespace Bank.App.Interfaces.Services;
 
-public interface IAccountService
+public interface IAccountService : IService<AccountDto>
 {
-    void UpdateAccountBalance(Account? account, decimal amount);
-    Account? GetAccountById(Guid accountId);
+    bool Withdrawel(Guid accountId, decimal amount);
+    bool Deposit(Guid accountId, decimal amount);
+    decimal GetAccountBalance(Guid accountId);
 }
