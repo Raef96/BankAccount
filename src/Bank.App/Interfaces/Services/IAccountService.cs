@@ -1,9 +1,6 @@
-﻿using Bank.Domain.Dtos;
-using Bank.App.Interfaces.Services.Base;
+﻿namespace Bank.App.Interfaces.Services;
 
-namespace Bank.App.Interfaces.Services;
-
-public interface IAccountService : IService<AccountDto>
+public interface IAccountService
 {
     bool Withdrawel(Guid accountId, decimal amount);
     bool Deposit(Guid accountId, decimal amount);

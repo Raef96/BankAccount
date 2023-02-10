@@ -13,7 +13,6 @@ public interface IBaseRepository<TEntity, T>
 {
     TEntity Get(T id);
     List<TEntity> GetAll();
-    bool Add(params TEntity[] entities);
-    bool Update(params TEntity[] entities);
-    bool Remove(params TEntity[] entities);
+    bool Add(TEntity entity);
+    bool Update(TEntity entity);
 }

@@ -2,5 +2,5 @@
 
 public interface ITransactionHandlerService
 {
-    bool StartTransaction(Func<bool> func);
+    bool StartTransaction(Func<Guid, decimal, bool> func, Guid arg1, decimal arg2);
 }

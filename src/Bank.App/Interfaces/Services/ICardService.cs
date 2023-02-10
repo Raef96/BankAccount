@@ -1,10 +1,8 @@
 ﻿using Bank.Domain.Entities;
-using Bank.Domain.Dtos;
-using Bank.App.Interfaces.Services.Base;
 
 namespace Bank.App.Interfaces.Services;
 
-public interface ICardService : IService<CardDto>
+public interface ICardService
 {
     Card GetCardByNumber(string cardNumber);
 }
