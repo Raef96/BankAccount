@@ -7,5 +7,5 @@ public interface IAccountService : IService<AccountDto>
 {
     bool Withdrawel(Guid accountId, decimal amount);
     bool Deposit(Guid accountId, decimal amount);
-    decimal GetAccountBalance(Guid accountId);
+    decimal GetBalance(Guid accountId);
 }
