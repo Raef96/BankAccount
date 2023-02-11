@@ -1,6 +1,5 @@
 ﻿using Bank.Domain.Entities.Base;
 using Bank.App.Interfaces.Repositories.Base;
-using Microsoft.EntityFrameworkCore;
 
 namespace Bank.Infrastructure.Persistance.Base;
 
