@@ -5,6 +5,7 @@ namespace Bank.Domain.Entities;
 
 public class Transaction : Entity
 {
+    public Guid AccountId{ get; set; }
     public Guid CardId { get; set; }
     public decimal Amount { get; set; }
     public string Currency { get; set; }
