@@ -2,6 +2,7 @@
 using Bank.App.Interfaces.Repositories;
 using Bank.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 
 namespace Bank.UnitTests;
 
@@ -13,10 +14,15 @@ public class AccountTests
 
     public AccountTests()
     {
+        var connection = new SqliteConnection("DataSource=:memory:");
+        connection.Open();
+
         var optionsBuilder = new DbContextOptionsBuilder<BankDbContext>()
-            .UseInMemoryDatabase(Guid.NewGuid().ToString());
+            .UseSqlite(connection);
+            //.UseInMemoryDatabase(Guid.NewGuid().ToString());
 
         _context = new BankDbContext(optionsBuilder.Options);
+        _context.Database.EnsureCreated();
 
         _transactionRepository = new TransactionRepository(_context);
         _accountRepository = new AccountRepository(_transactionRepository, _context);
@@ -28,6 +34,10 @@ public class AccountTests
         var success = _accountRepository.Add(new Account
         {
             Id = Guid.NewGuid(),
+            Owner = "Jhon",
+            IBAN = "FR65122554666",
+            RIB = "30048665451464",
+            Balance = 100,
         });
 
         Assert.True(success);

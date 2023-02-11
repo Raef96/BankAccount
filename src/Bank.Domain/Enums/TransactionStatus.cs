@@ -3,5 +3,6 @@
 public enum TransactionStatus
 {
     Accepted,
-    Rejected
+    Rejected,
+    Pending
 }

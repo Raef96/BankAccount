@@ -30,7 +30,9 @@ internal class Repository<TEntity> : IRepository<TEntity>
 
     public TEntity Get(Guid id)
     {
-        return _dbContext.Set<TEntity>().FirstOrDefault();
+        return _dbContext.Set<TEntity>()
+            .Where(entity => entity.Id == id)
+            .FirstOrDefault();
     }
 
     public List<TEntity> GetAll()
