@@ -5,5 +5,5 @@ namespace Bank.App.Interfaces.Repositories;
 
 public interface ITransactionRepository : IRepository<Transaction>
 {
-
+    List<Transaction> GetByAccountId(Guid accountId);
 }
