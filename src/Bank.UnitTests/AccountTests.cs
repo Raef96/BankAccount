@@ -166,10 +166,4 @@ public class AccountTests
     {
         //TODO
     }
-
-    [Fact]
-    public void Deposit_Exception_NoTransactionIsAdded()
-    {
-        //TODO
-    }
 }
