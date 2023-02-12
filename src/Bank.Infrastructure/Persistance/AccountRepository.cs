@@ -27,6 +27,7 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
         {
             throw new ArgumentException("Negative ammount");
         }
+
         using (var transaction = _dbContext.Database.BeginTransaction())
         {
             try
@@ -54,6 +55,8 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
                     // create a failed transaction
                     bankTransaction.Status = TransactionStatus.Rejected;
                     _transactionRepository.Add(bankTransaction);
+
+                    transaction.Commit();
                     return false;
                 }
 
@@ -102,7 +105,7 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
                     AccountId = accountId,
                     CreationDate = DateTime.UtcNow,
                     Amount = amount,
-                    Type = TransactionType.Debit,
+                    Type = TransactionType.Credit,
                     Status = TransactionStatus.Pending
                 };
 
@@ -125,5 +128,11 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
         };
 
         return false;
+    }
+
+    public List<Guid> GetAllIds()
+    {
+        return _dbContext.Accounts.Select(a => a.Id)
+            .ToList();
     }
 }

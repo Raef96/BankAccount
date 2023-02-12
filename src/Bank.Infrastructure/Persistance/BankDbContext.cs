@@ -8,7 +8,7 @@ namespace Bank.Infrastructure.Persistance
     {
         public BankDbContext(DbContextOptions options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
      
 

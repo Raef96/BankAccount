@@ -13,6 +13,7 @@ internal class TransactionRepository : Repository<Transaction>, ITransactionRepo
 
     public List<Transaction> GetByAccountId(Guid accountId)
     {
-        throw new NotImplementedException();
+        return _dbContext.Transactions.Where(trans => trans.AccountId == accountId)
+            .ToList();
     }
 }
