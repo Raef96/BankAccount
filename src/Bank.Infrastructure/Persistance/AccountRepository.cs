@@ -1,5 +1,6 @@
 ﻿using Bank.Domain.Enums;
 using Bank.Domain.Entities;
+using Bank.Domain.Exceptions;
 using Bank.App.Interfaces.Repositories;
 using Bank.Infrastructure.Persistance.Base;
 
@@ -25,18 +26,16 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
     {
         if (amount < 0)
         {
-            throw new ArgumentException("Negative ammount");
+            throw new NegativeAmountException(amount);
         }
 
         using (var transaction = _dbContext.Database.BeginTransaction())
         {
             try
             {
-
                 var account = Get(accountId);
                 if (account is null)
                 {
-                    // log account is not found or balance < amount
                     return false;
                 }
 
@@ -55,8 +54,8 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
                     // create a failed transaction
                     bankTransaction.Status = TransactionStatus.Rejected;
                     _transactionRepository.Add(bankTransaction);
-
                     transaction.Commit();
+
                     return false;
                 }
 
@@ -85,13 +84,13 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
     {
         if (amount < 0)
         {
-            throw new ArgumentException("Negative ammount");
+            throw new NegativeAmountException(amount);
         }
+
         using (var transaction = _dbContext.Database.BeginTransaction())
         {
             try
             {
-
                 var account = Get(accountId);
                 if (account is null)
                 {
@@ -134,5 +133,20 @@ internal class AccountRepository : Repository<Account>, IAccountRepository
     {
         return _dbContext.Accounts.Select(a => a.Id)
             .ToList();
+    }
+
+    public override bool Add(Account account)
+    {
+        if (account == null)
+        {
+            return false;
+        }
+
+        if (account.Balance < 0)
+        {
+            throw new NegativeBalanceException(account.Balance);
+        }
+
+        return base.Add(account);
     }
 }
