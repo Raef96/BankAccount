@@ -1,7 +1,7 @@
 ﻿
 namespace Bank.Domain.Exceptions;
 
-internal class InsufficientFundsException : Exception
+public class InsufficientFundsException : Exception
 {
     public InsufficientFundsException()
     {

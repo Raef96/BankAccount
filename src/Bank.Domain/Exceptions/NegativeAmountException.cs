@@ -1,6 +1,6 @@
 ﻿namespace Bank.Domain.Exceptions;
 
-internal class NegativeAmountException : Exception
+public class NegativeAmountException : Exception
 {
     public NegativeAmountException()
     {
