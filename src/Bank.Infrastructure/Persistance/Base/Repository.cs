@@ -12,7 +12,7 @@ internal class Repository<TEntity> : IRepository<TEntity>
         _dbContext = dbContext;
     }
 
-    public bool Add(TEntity entity)
+    public virtual bool Add(TEntity entity)
     {
         try
         {
