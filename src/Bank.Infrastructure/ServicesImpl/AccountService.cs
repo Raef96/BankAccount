@@ -23,12 +23,30 @@ internal class AccountService : IAccountService
 
     public bool Deposit(Guid accountId, decimal amount)
     {
-        return _accountRepository.Deposit(accountId, amount);
+        try
+        {
+            return _accountRepository.Deposit(accountId, amount);
+        }
+        catch
+        {
+            // log 
+        }
+
+        return false;
     }
 
     public bool Withdrawel(Guid accountId, decimal amount)
     {
-        return _accountRepository.Withdrawel(accountId, amount);
+        try
+        {
+            return _accountRepository.Withdrawel(accountId, amount);
+        }
+        catch
+        {
+            // log
+        }
+
+        return false;   
     }
 
     public AccountDto GetById(Guid id)
@@ -39,14 +57,23 @@ internal class AccountService : IAccountService
 
     public bool Add(AccountDto account)
     {
-        return _accountRepository.Add(new Account
+        try
         {
-            Id = Guid.NewGuid(),
-            Balance = account.Balance,
-            IBAN = account.IBAN,
-            Owner = account.Owner,
-            RIB = account.RIB
-        });
+            return _accountRepository.Add(new Account
+            {
+                Id = Guid.NewGuid(),
+                Balance = account.Balance,
+                IBAN = account.IBAN,
+                Owner = account.Owner,
+                RIB = account.RIB
+            });
+        }
+        catch
+        {
+
+        }
+        
+        return false;
     }
 
     public IEnumerable<AccountDto> GetAll()
